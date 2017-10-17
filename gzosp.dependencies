@@ -1,6 +1,6 @@
 [
   {
-    "repository": "ValidusOS-Devices/device_motorola_sanders",
+    "repository": "GZOSP-Devices/device_motorola_sanders",
     "target_path": "device/motorola/sanders",
     "branch": "8.0"
   },
