@@ -102,7 +102,6 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     libbson \
-    libshim_camera \
     Camera2 \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
@@ -197,10 +196,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@1.0-impl \
     android.hardware.health@1.0-service
-
-# IMS
-PRODUCT_PACKAGES += \
-    libshim_ims
 
 # IPA Manager
 PRODUCT_PACKAGES += \
@@ -330,7 +325,6 @@ PRODUCT_COPY_FILES += \
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
-    libshim_ril \
     libprotobuf-cpp-full \
     libxml2
 
