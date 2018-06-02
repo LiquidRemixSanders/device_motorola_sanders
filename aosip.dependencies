@@ -5,8 +5,8 @@
     "branch": "9.0"
   },
   {
-    "repository": "GZR-Kernels/kernel_motorola_msm8953_sanders",
+    "repository": "theroot/kernel_motorola_msm8953",
     "target_path": "kernel/motorola/msm8953",
-    "branch": "9.0"
+    "branch": "rebase-new"
   }
 ]
