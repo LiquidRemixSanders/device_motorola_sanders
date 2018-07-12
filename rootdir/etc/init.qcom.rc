@@ -598,7 +598,6 @@ service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
     user system
     socket ims_rtpd stream 0660 system radio
     group radio diag inet log
-    disabled
 
 service vendor.imsrcsservice /system/vendor/bin/imsrcsd
     class main
@@ -608,7 +607,7 @@ service vendor.imsrcsservice /system/vendor/bin/imsrcsd
     disabled
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
-    start vendor.ims_rtp_daemon
+    restart vendor.ims_rtp_daemon
     start vendor.imsrcsservice
 
 service vendor.rmt_storage /system/vendor/bin/rmt_storage
