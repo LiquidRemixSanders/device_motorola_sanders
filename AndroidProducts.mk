@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/liquid_sanders.mk
+	$(LOCAL_DIR)/liquid.mk
