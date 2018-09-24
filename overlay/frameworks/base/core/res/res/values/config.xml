@@ -473,7 +473,6 @@
 	<dimen name="config_dialogCornerRadius">8.0dip</dimen>
 	<dimen name="config_buttonCornerRadius">4.0dip</dimen>
 
-    <string name="config_recentsComponentName"
-translatable="false">com.google.android.apps.nexuslauncher/com.android.quickstep.RecentsActivity</string> 
+    <string name="config_recentsComponentName" translatable="false">com.google.android.apps.nexuslauncher/com.android.quickstep.RecentsActivity</string>
 
 </resources>
