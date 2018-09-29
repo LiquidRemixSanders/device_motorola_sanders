@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/syberia.mk
+	$(LOCAL_DIR)/syberia_sanders.mk
