@@ -181,7 +181,7 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1
 
 # FM
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni \
     init.qti.fm.sh
