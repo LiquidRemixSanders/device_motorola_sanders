@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo franken_sanders-userdebug
+add_lunch_combo wave_sanders-userdebug
