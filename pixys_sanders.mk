@@ -40,7 +40,7 @@ TARGET_DEVICE=pixys_sander PRODUCT_NAME="Moto G5s Plus"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DEVICE_MAINTAINERS="Syed Sajid (syedsajid)" \
-    PRIVATE_BUILD_DESC="sanders-7.1.1/NPS26.116-26/30:user/release-keys"
+    PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPS28.65-36 9fea release-keys"
 
 # for specific
 $(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
