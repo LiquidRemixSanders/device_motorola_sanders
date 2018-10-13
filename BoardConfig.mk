@@ -126,16 +126,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_NO_CHARGER_LED := true
 WITH_CM_CHARGER := false
 
-#HALS
-TARGET_QCOM_MEDIA_VARIANT := caf-msm8996 
-TARGET_QCOM_DISPLAY_VARIANT := caf-msm8996
-TARGET_QCOM_AUDIO_VARIANT := caf-msm8996
-
-PRODUCT_SOONG_NAMESPACES += \
-    hardware/qcom/display-$(TARGET_QCOM_DISPLAY_VARIANT)\
-    hardware/qcom/audio-$(TARGET_QCOM_AUDIO_VARIANT) \
-    hardware/qcom/media-$(TARGET_QCOM_MEDIA_VARIANT)
-
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 
