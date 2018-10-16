@@ -41,7 +41,7 @@ TARGET_DEVICE=liquid_sander PRODUCT_NAME="Moto G5s Plus"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DEVICE_MAINTAINERS="Syed Sajid (syedsajid)"
-export LIQUID_BUILD_TYPE=RELEASE
+export LIQUID_BUILDTYPE=RELEASE
 
 # for specific
 $(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
