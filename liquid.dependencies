@@ -5,8 +5,8 @@
     "branch": "9.0"
   },
   {
-    "repository": "therootlord/kernel_motorola_msm8953",
+    "repository": "Chirayu19091997/kernel_motorola_msm8953",
     "target_path": "kernel/motorola/msm8953",
-    "branch": "9.0-eas-new"
+    "branch": "9.0"
   }
 ]
