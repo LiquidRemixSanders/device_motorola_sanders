@@ -1,12 +1,12 @@
 [
   {
-    "repository":  "therootlord/proprietary_vendor_motorola_sanders",
+    "repository":  "BigTopKrazies/vendor_motorola_sanders",
     "target_path": "vendor/motorola/sanders",
-    "branch": "9.0-64"
+    "branch": "9.0"
   },
   {
     "repository": "therootlord/kernel_motorola_msm8953",
     "target_path": "kernel/motorola/msm8953",
-    "branch": "rebase-new"
+    "branch": "9.0-eas-new"
   }
 ]
