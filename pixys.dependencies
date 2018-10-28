@@ -3,10 +3,5 @@
     "repository":  "BigTopKrazies/vendor_motorola_sanders",
     "target_path": "vendor/motorola/sanders",
     "branch": "9.0"
-  },
-  {
-    "repository": "Chirayu19091997/kernel_motorola_msm8953",
-    "target_path": "kernel/motorola/msm8953",
-    "branch": "9.0"
   }
 ]
