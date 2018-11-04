@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo wave_sanders-userdebug
+add_lunch_combo bootleg_sanders-userdebug
