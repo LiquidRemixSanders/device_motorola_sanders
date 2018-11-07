@@ -15,3 +15,4 @@
 #
 
 add_lunch_combo liquid_sanders-userdebug
+add lunch_combo liquid_sanders-eng
