@@ -322,11 +322,8 @@
           turned off and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOffByDefault">true</bool>
 
-    <!-- doze always on
-    <bool name="config_enableDozeAlwaysOn">true</bool>-->
-
-    <!-- Enable doze powersaving -->
-    <bool name="config_enableAutoPowerModes">true</bool>
+    <!-- Disable AOD by default -->
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
     <!-- Power Management: Specifies whether to decouple the interactive state of the
          device from the display on/off state.
