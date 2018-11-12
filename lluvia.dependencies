@@ -1,6 +1,6 @@
 [
   {
-    "repository":  "BigTopKrazies/vendor_motorola_sanders",
+    "repository":  "LiquidRemixSanders/vendor_motorola_sanders",
     "target_path": "vendor/motorola/sanders",
     "branch": "9.0"
   }
