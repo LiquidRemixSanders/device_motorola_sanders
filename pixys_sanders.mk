@@ -23,7 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 $(call inherit-product, device/motorola/sanders/device.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/pixys/config/common.mk)
+$(call inherit-product, vendor/pixys/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
