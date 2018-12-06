@@ -451,8 +451,7 @@ public class KeyHandler implements DeviceKeyHandler {
         }
 
         boolean isFPScanCode = ArrayUtils.contains(sSupportedFPGestures, scanCode);
-        boolean isScreenOffGesturesScanCode = ArrayUtils.contains(sSupportedScreenOffGestures, scanCode);
-        if (!isFPScanCode && !isScreenOffGesturesScanCode) {
+        if (!isFPScanCode) {
             return event;
         }
 
@@ -507,8 +506,7 @@ public class KeyHandler implements DeviceKeyHandler {
         }
 
         boolean isFPScanCode = ArrayUtils.contains(sSupportedFPGestures, scanCode);
-        boolean isScreenOffGesturesScanCode = ArrayUtils.contains(sSupportedScreenOffGestures, scanCode);
-        if (!isFPScanCode && !isScreenOffGesturesScanCode) {
+        if (!isFPScanCode) {
             return false;
         }
         
