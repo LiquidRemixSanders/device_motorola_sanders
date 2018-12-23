@@ -380,8 +380,7 @@
     <bool name="config_supportDoubleTapWake">false</bool>
 
     <!-- Indicate whether to allow the device to suspend when the screen is off
-         due to the proximity sensor.  This resource should only be set to true
-         if the sensor HAL correctly handles the proximity sensor as a wake-up source.
+         due to the proximity sensor.  This resource should only be set to true         if the sensor HAL correctly handles the proximity sensor as a wake-up source.
          Otherwise, the device may fail to wake out of suspend reliably.
          The default is false. -->
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
@@ -400,14 +399,10 @@
     <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>-->
 
     <!-- Paths to the libraries that contain device specific key handlers -->
-    <string-array name="config_deviceKeyHandlerLib" translatable="false">
-        <item>/vendor/app/MotoActions/MotoActions.apk</item>
-    </string-array>
+    <string name="config_deviceKeyHandlerLib" translatable="false">/system/priv-app/MotoActions/MotoActions.apk</string>
 
     <!-- Names of the key handler classes -->
-    <string-array name="config_deviceKeyHandlerClass" translatable="false">
-        <item>com.moto.actions.KeyHandler</item>
-    </string-array>
+    <string name="config_deviceKeyHandlerClass" translatable="false">com.moto.actions.KeyHandler</string>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
