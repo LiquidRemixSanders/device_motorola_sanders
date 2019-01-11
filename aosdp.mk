@@ -23,7 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 $(call inherit-product, device/motorola/sanders/device.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/liquid/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosdp/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
@@ -31,17 +31,16 @@ TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sanders
-PRODUCT_NAME := liquid_sanders
+PRODUCT_NAME := aosdp_sanders
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_MODEL := Moto G5S Plus
 
 PRODUCT_BUILD_PROP_OVERRIDES += 
-TARGET_DEVICE=liquid_sander PRODUCT_NAME="Moto G5s Plus"
+TARGET_DEVICE=aosdp_sander PRODUCT_NAME="Moto G5s Plus"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DEVICE_MAINTAINERS="Syed Sajid (syedsajid)"
-export "LIQUID_BUILDTYPE=RELEASE"
+    DEVICE_MAINTAINERS="Syed Sajid (syedsaji)"
 
 # for specific
 $(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
