@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/aosdp.mk
+	$(LOCAL_DIR)/aosdp_sanders.mk
