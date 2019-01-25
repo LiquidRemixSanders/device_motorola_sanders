@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/beast_sanders.mk
+	$(LOCAL_DIR)/pixys_sanders.mk
