@@ -1,0 +1,7 @@
+[
+  {
+    "repository":  "BigTopKrazies/vendor_motorola_sanders",
+    "target_path": "vendor/motorola/sanders",
+    "branch": "9.0"
+  }
+]
