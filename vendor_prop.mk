@@ -4,26 +4,6 @@
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-<<<<<<< HEAD
-    audio.deep_buffer.media=true \
-    vendor.audio.offload.buffer.size.kb=64 \
-    vendor.audio.offload.gapless.enabled=false \
-    vendor.audio.offload.multiple.enabled=false \
-    vendor.audio.offload.pcm.16bit.enable=false \
-    vendor.audio.offload.pcm.24bit.enable=false \
-    audio.offload.track.enable=true \
-    persist.audio.dualmic.config=endfire \
-    ro.af.client_heap_size_kbyte=7168 \
-    af.fast_track_multiplier=1 \
-    audio.offload.disable=false \
-    audio.offload.min.duration.secs=60 \
-    audio.offload.video=false \
-    vendor.audio.playback.mch.downsample=true \
-    vendor.audio_hal.period_size=240 \
-    av.offload.enable=false \
-    av.debug.disable.pers.cache=1 \
-    persist.audio.endcall.delay=250 \
-=======
     af.fast_track_multiplier=1 \
     audio.deep_buffer.media=true \
     audio.offload.disable=false \
@@ -31,7 +11,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.video=false \
     av.offload.enable=false \
     av.debug.disable.pers.cache=1 \
->>>>>>> or/9.0
     qcom.hw.aac.encoder=false \
     persist.audio.calfile0=/vendor/etc/acdbdata/Bluetooth_cal.acdb \
     persist.audio.calfile1=/vendor/etc/acdbdata/General_cal.acdb \
@@ -40,19 +19,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb \
     persist.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb \
     persist.audio.calfile6=/vendor/etc/acdbdata/Speaker_cal.acdb \
-<<<<<<< HEAD
-=======
     persist.audio.dualmic.config=endfire \
     persist.audio.endcall.delay=250 \
->>>>>>> or/9.0
     persist.vendor.audio.fluence.speaker=false \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicecomm=true \
     persist.vendor.audio.fluence.voicerec=false \
-<<<<<<< HEAD
     ro.qc.sdk.audio.fluencetype=none \
     ro.qc.sdk.audio.ssr=false \
-=======
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
     ro.af.client_heap_size_kbyte=7168 \
     ro.vendor.audio.sdk.fluencetype=none \
@@ -68,7 +42,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.playback.mch.downsample=true \
     vendor.audio.safx.pbe.enabled=true \
     vendor.audio.tunnel.encode=false \
->>>>>>> or/9.0
     vendor.use.voice.path.for.pcm.voip=false
 
 # Bluetooth
@@ -166,11 +139,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.fm.transmitter=false
 
-<<<<<<< HEAD
-#HWUI properties
-=======
 # HWUI properties
->>>>>>> or/9.0
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.texture_cache_size=72 \
     ro.hwui.layer_cache_size=48 \
@@ -186,10 +155,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
-<<<<<<< HEAD
-    persist.vendor.radio.jbims=1 \
-=======
->>>>>>> or/9.0
     persist.radio.RATE_ADAPT_ENABLE=1 \
     persist.radio.VT_ENABLE=1 \
     persist.radio.VT_HYBRID_ENABLE=1 \
@@ -200,26 +165,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.ims.disableQXDMLogs=0 \
     persist.ims.rcs=false \
     persist.ims.volte=true \
-<<<<<<< HEAD
-    persist.ims.vt=false \
     persist.ims.vt.epdg=false \
     persist.mm.sta.enable=0 \
-    persist.vt.supported=0 \
-=======
-    persist.ims.vt.epdg=false \
-    persist.mm.sta.enable=0 \
->>>>>>> or/9.0
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    media.aac_51_output_enabled=true \
-<<<<<<< HEAD
-=======
+    media.aac_51_output_enale=true \
     media.settings.xml=/vendor/etc/media_profiles.xml \
->>>>>>> or/9.0
     mm.enable.qcom_parser=135715 \
     mm.enable.sec.smoothstreaming=false \
     mm.enable.smoothstreaming=false \
@@ -232,15 +187,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
     ro.debuggable=1
 
-<<<<<<< HEAD
-=======
 # Netmgr
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.use_data_netmgrd=true \
     persist.data.netmgrd.qos.enable=true \
     persist.data.mode=concurrent
 
->>>>>>> or/9.0
 # NITZ
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_plmn="" \
@@ -269,10 +221,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0 \
     persist.radio.apn_delay=5000 \
-<<<<<<< HEAD
-    persist.radio.adam=true \
-=======
->>>>>>> or/9.0
     persist.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.dfr_mode_set=1 \
     persist.vendor.radio.force_get_pref=1 \
@@ -280,10 +228,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.no_wait_for_card=1 \
     persist.vendor.radio.oem_ind_to_both=0 \
     persist.vendor.radio.relay_oprt_change=1 \
-<<<<<<< HEAD
-=======
     ril.subscription.types=NV,RUIM \
->>>>>>> or/9.0
     rild.libargs=-d[SPACE]/dev/smd0 \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ro.mot.ignore_csim_appid=true \
@@ -295,11 +240,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.is_wps_enabled=true \
     persist.vendor.radio.mt_sms_ack=30 \
     persist.vendor.radio.0x9e_not_callname=1 \
-<<<<<<< HEAD
-    persist.vendor.qcril_uim_vcc_feature=1 \
-=======
     persist.vendor.radio.qcril_uim_vcc_feature=1 \
->>>>>>> or/9.0
     persist.mot.gps.conf.from.sim=true \
     persist.net.doxlat=true \
     persist.radio.REVERSE_QMI=0 \
@@ -311,10 +252,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.sib16_support=1 \
     persist.radio.sib16_support=1 \
     persist.vendor.radio.rat_on=combine \
-<<<<<<< HEAD
     persist.rmnet.mux=enabled \
-=======
->>>>>>> or/9.0
     ro.telephony.call_ring.multiple=false \
     persist.vendor.radio.eri64_as_home=1 \
     persist.vendor.radio.data_con_rprt=1 \
@@ -332,24 +270,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.always_send_plmn=true \
     persist.rcs.supported=1 \
     persist.dbg.ims_volte_enable=1 \
-<<<<<<< HEAD
-    ro.use_data_netmgrd=true \
-    persist.data.qmi.adb_logmask=0 \
-    persist.data.netmgrd.qos.enable=true \
-    persist.data.mode=concurrent \
-    persist.data.iwlan.enable=true
-
-# RmNet Data
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rmnet.data.enable=true \
-=======
     persist.data.qmi.adb_logmask=0 \
     telephony.lteOnCdmaDevice=1 \
     DEVICE_PROVISIONED=1
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
->>>>>>> or/9.0
     persist.data.wda.enable=true \
     persist.data.df.dl_mode=5 \
     persist.data.df.ul_mode=5 \
@@ -357,14 +283,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.agg.dl_size=4096 \
     persist.data.df.mux_count=8 \
     persist.data.df.iwlan_mux=9 \
-<<<<<<< HEAD
-    persist.data.df.dev_name=rmnet_usb0
-=======
     persist.data.df.dev_name=rmnet_usb0 \
     persist.data.iwlan.enable=true \
     persist.rmnet.data.enable=true \
     persist.rmnet.mux=enabled
->>>>>>> or/9.0
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -394,8 +316,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.usb.bpt_adb=0x2ee6 \
     ro.usb.bpteth=0x2ee7 \
     ro.usb.bpteth_adb=0x2ee8
-<<<<<<< HEAD
-=======
 
 # Volte
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -421,4 +341,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.foss=1 \
     config.foss.xml=1 \
     config.foss.path=/vendor/etc/FOSSConfig.xml
->>>>>>> or/9.0
