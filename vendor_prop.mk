@@ -153,7 +153,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.radio.jbims=1 \
     persist.radio.RATE_ADAPT_ENABLE=1 \
     persist.radio.VT_ENABLE=1 \
     persist.radio.VT_HYBRID_ENABLE=1 \
@@ -173,6 +172,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
+    media.settings.xml=/vendor/etc/media_profiles.xml \
     mm.enable.qcom_parser=135715 \
     mm.enable.sec.smoothstreaming=false \
     mm.enable.smoothstreaming=false \
@@ -313,3 +313,28 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.usb.bpt_adb=0x2ee6 \
     ro.usb.bpteth=0x2ee7 \
     ro.usb.bpteth_adb=0x2ee8
+
+# Volte
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.radio.force_on_dc=true \
+persist.radio.custom_ecc=1 \
+persist.radio.data_con_rprt=1 \
+persist.vendor.radio.data_ltd_sys_ind=1 \
+persist.radio.data_ltd_sys_ind=1 \
+persist.vendor.radio.ignore_dom_time=10 \
+persist.radio.ignore_dom_time=10 \
+persist.radio.rat_on=combine \
+persist.radio.is_wps_enabled=true \
+persist.radio.videopause.mode=1 \
+persist.radio.sap_silent_pin=1 \
+persist.radio.always_send_plmn=true \
+persist.rcs.supported=1 \
+persist.dbg.ims_volte_enable=1
+
+# FOSS CONFIGS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qcom.dpps.sensortype=3 \
+    ro.qualcomm.display.paneltype=1 \
+    ro.qualcomm.foss=1 \
+    config.foss.xml=1 \
+    config.foss.path=/vendor/etc/FOSSConfig.xml

@@ -1,0 +1,7 @@
+[
+  {
+    "repository":  "LiquidRemixSanders/vendor_motorola_sanders",
+    "target_path": "vendor/motorola/sanders",
+    "branch": "pie"
+  }
+]
