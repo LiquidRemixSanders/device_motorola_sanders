@@ -15,4 +15,3 @@
 #
 
 add_lunch_combo lluvia_sanders-userdebug
-add_lunch_combo lluvia_sanders-eng
