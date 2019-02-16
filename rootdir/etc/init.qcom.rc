@@ -581,11 +581,11 @@ service vendor.adsprpcd /vendor/bin/adsprpcd
     user media
     group media
 
-#service energy-awareness /vendor/bin/energy-awareness
-#    class main
-#    user root
-#    group system
-#    oneshot
+service vendor.energy-awareness /vendor/bin/energy-awareness
+    class main
+    user root
+    group system
+    oneshot
 
 service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
@@ -777,7 +777,11 @@ service iprenew_wigig0 /system/bin/dhcpcd -n
     oneshot
 
 on property:ro.hw.dtv=true
+<<<<<<< HEAD
     insmod /vendor/lib/modules/isdbt.ko
+=======
+    insmod /system/vendor/lib/modules/isdbt.ko
+>>>>>>> llu/9.0
 
 service wlan_logging /system/bin/cnss_diag -q -f
     class main
@@ -786,6 +790,7 @@ service wlan_logging /system/bin/cnss_diag -q -f
     disabled
     oneshot
 
+<<<<<<< HEAD
 #service cnss-daemon /vendor/bin/cnss-daemon -n -l
 #    class late_start
 #    user system
@@ -794,6 +799,16 @@ service wlan_logging /system/bin/cnss_diag -q -f
 #
 #on property:sys.shutdown.requested=*
 #    stop cnss-daemon
+=======
+service cnss-daemon /vendor/bin/cnss-daemon -n -l
+    class late_start
+    user system
+    group system inet net_admin wifi
+    capabilities NET_ADMIN
+
+on property:sys.shutdown.requested=*
+    stop cnss-daemon
+>>>>>>> llu/9.0
 
 service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
     class late_start

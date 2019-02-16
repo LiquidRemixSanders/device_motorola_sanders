@@ -40,7 +40,10 @@ PRODUCT_BUILD_PROP_OVERRIDES +=
 TARGET_DEVICE=lluvia_sander PRODUCT_NAME="Moto G5s Plus"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DEVICE_MAINTAINERS="Syed Sajid (syedsajid)"
+    DEVICE_MAINTAINERS="Syed Sajid (syedsajid)" \
+    PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPS28.65-36 9fea release-keys"
 
 # for specific
 $(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
+
+BUILD_FINGERPRINT := google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys

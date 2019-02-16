@@ -122,10 +122,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/msm8953_mot_sanders_camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/msm8953_mot_sanders_camera.xml \
     $(LOCAL_PATH)/configs/camera/s5k4h8_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/s5k4h8_chromatix.xml
 
-# MotoActions
-PRODUCT_PACKAGES += \
-    MotoActions
-
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8953 \
@@ -279,7 +275,7 @@ PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
 # NFC
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     android.hardware.nfc@1.1-service \
     com.android.nfc_extras \
     libnfc \
@@ -309,8 +305,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service
+    android.hardware.power@1.1-service-qti
 
 # Powerhint configuration file
 PRODUCT_COPY_FILES += \
