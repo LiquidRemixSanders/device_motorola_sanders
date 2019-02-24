@@ -29,6 +29,9 @@ $(call inherit-product, vendor/aosip/config/common_full_phone.mk)
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
 
+# GApps
+$(call inherit-product-if-exists, vendor/gapps/config.mk)
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sanders
 PRODUCT_NAME := aosip_sanders
@@ -39,8 +42,14 @@ PRODUCT_MODEL := Moto G5S Plus
 PRODUCT_BUILD_PROP_OVERRIDES += 
 TARGET_DEVICE=aosip_sander PRODUCT_NAME="Moto G5s Plus"
 
+TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
+
+# Maintainer Prop
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DEVICE_MAINTAINER="Syed Sajid (syedsajid)" \
+DEVICE_MAINTAINERS="Syed Sajid"
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPS28.65-36 9fea release-keys"
 
 # for specific
