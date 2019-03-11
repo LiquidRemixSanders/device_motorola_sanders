@@ -27,6 +27,9 @@ $(call inherit-product, vendor/lluvia/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
+WITH_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sanders
