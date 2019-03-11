@@ -32,8 +32,8 @@ type wapi_supplicant_data_file, file_type, data_file_type;
 type netmgr_data_file, file_type, data_file_type;
 
 # sysfs
-type sysfs_adsp, fs_type, sysfs_type;
-type sysfs_homebutton, fs_type, sysfs_type, mlstrustedobject;
+#type sysfs_adsp, fs_type, sysfs_type;
+type sysfs_homebutton, fs_type, sysfs_type;
 type sysfs_mmi_fp, fs_type, sysfs_type;
 
 type sysfs_capsense, fs_type, sysfs_type;
@@ -55,3 +55,5 @@ type proc_kernel_sched, fs_type;
 type sysfs_power_management, sysfs_type, fs_type;
 type proc_touchpanel, fs_type;
 
+type camera_socket, file_type, data_file_type;
+type sysfs_screen_off_gestures, fs_type, sysfs_type, mlstrustedobject;
