@@ -12,15 +12,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     av.offload.enable=false \
     av.debug.disable.pers.cache=1 \
     qcom.hw.aac.encoder=false \
-    persist.audio.calfile0=/vendor/etc/acdbdata/Bluetooth_cal.acdb \
-    persist.audio.calfile1=/vendor/etc/acdbdata/General_cal.acdb \
-    persist.audio.calfile2=/vendor/etc/acdbdata/Global_cal.acdb \
-    persist.audio.calfile3=/vendor/etc/acdbdata/Handset_cal.acdb \
-    persist.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb \
-    persist.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb \
-    persist.audio.calfile6=/vendor/etc/acdbdata/Speaker_cal.acdb \
     persist.audio.dualmic.config=endfire \
     persist.audio.endcall.delay=250 \
+    persist.vendor.audio.calfile0=/vendor/etc/acdbdata/Bluetooth_cal.acdb \
+    persist.vendor.audio.calfile1=/vendor/etc/acdbdata/General_cal.acdb \
+    persist.vendor.audio.calfile2=/vendor/etc/acdbdata/Global_cal.acdb \
+    persist.vendor.audio.calfile3=/vendor/etc/acdbdata/Handset_cal.acdb \
+    persist.vendor.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb \
+    persist.vendor.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb \
+    persist.vendor.audio.calfile6=/vendor/etc/acdbdata/Speaker_cal.acdb \
     persist.vendor.audio.fluence.speaker=false \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicecomm=true \
@@ -49,6 +49,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     qcom.bt.le_dev_pwr_class=1 \
     ro.cutoff_voltage_mv=3400 \
     ro.bluetooth.hfp.ver=1.7 \
+    qcom.bluetooth.soc=smd \
+    vendor.qcom.bluetooth.soc=smd \
     ro.qualcomm.bt.hci_transport=smd \
     ro.qualcomm.bluetooth.opp=true \
     ro.qualcomm.bluetooth.hfp=true \
@@ -133,6 +135,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.enable_fb_ubwc=1 \
     vendor.display.disable_skip_validate=1
 
+# Wifi-Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0 \
+    vendor.video.disable.ubwc=1
+
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.fm.transmitter=false
@@ -189,7 +197,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.use_data_netmgrd=true \
     persist.data.netmgrd.qos.enable=true \
-    persist.data.mode=concurrent
+    persist.data.mode=concurrent \
+    persist.vendor.radio.snapshot_timer=22 \
+    persist.vendor.radio.snapshot_enabled=1 \
+    persist.radio.calls.on.ims=true \
+    persist.radio.domain.ps=0 \
+    persist.rmnet.mux=enabled \
+    persist.radio.REVERSE_QMI=0 \
+    persist.sys.cnd.iwlan=1 \
+    persist.cne.logging.qxdm=3974 \
+    persist.vendor.ims.disableDebugLogs=1 \
+    persist.vendor.ims.disableQXDMLogs=1 \
+    DEVICE_PROVISIONED=1 \
+    persist.cne.feature=1
+
 
 # NITZ
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -221,6 +242,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.apn_delay=5000 \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.dfr_mode_set=1 \
+    persist.vendor.radio.add_power_save=1 \
+    persist.vendor.dpm.feature=0 \
     persist.vendor.radio.force_get_pref=1 \
     persist.radio.msgtunnel.start=true \
     persist.vendor.radio.no_wait_for_card=1 \
@@ -266,10 +289,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.sap_silent_pin=1 \
     persist.radio.always_send_plmn=true \
     persist.rcs.supported=1 \
+    ro.telephony.default_network=10,0 \
+    persist.radio.msgtunnel.start=true \
+    persist.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.qcril_uim_vcc_feature=1 \
+    persist.radio.schd.cache=3500 \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.lte_vrte_ltd=1 \
+    persist.vendor.radio.cs_srv_type=1 \
     persist.dbg.ims_volte_enable=1 \
     persist.data.qmi.adb_logmask=0 \
-    telephony.lteOnCdmaDevice=1 \
-    DEVICE_PROVISIONED=1
+    telephony.lteOnCdmaDevice=1
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -316,25 +346,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Volte
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.vendor.radio.force_on_dc=true \
-persist.radio.custom_ecc=1 \
-persist.radio.data_con_rprt=1 \
-persist.vendor.radio.data_ltd_sys_ind=1 \
-persist.radio.data_ltd_sys_ind=1 \
-persist.vendor.radio.ignore_dom_time=10 \
-persist.radio.ignore_dom_time=10 \
-persist.radio.rat_on=combine \
-persist.radio.is_wps_enabled=true \
-persist.radio.videopause.mode=1 \
-persist.radio.sap_silent_pin=1 \
-persist.radio.always_send_plmn=true \
-persist.rcs.supported=1 \
-persist.dbg.ims_volte_enable=1
-
-# FOSS CONFIGS
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qcom.dpps.sensortype=3 \
-    ro.qualcomm.display.paneltype=1 \
-    ro.qualcomm.foss=1 \
-    config.foss.xml=1 \
-    config.foss.path=/vendor/etc/FOSSConfig.xml
+    persist.vendor.radio.force_on_dc=true \
+    persist.radio.custom_ecc=1 \
+    persist.radio.data_con_rprt=1 \
+    persist.vendor.radio.data_ltd_sys_ind=1 \
+    persist.radio.data_ltd_sys_ind=1 \
+    persist.vendor.radio.ignore_dom_time=10 \
+    persist.radio.ignore_dom_time=10 \
+    persist.radio.rat_on=combine \
+    persist.radio.is_wps_enabled=true \
+    persist.radio.videopause.mode=1 \
+    persist.radio.sap_silent_pin=1 \
+    persist.radio.always_send_plmn=true \
+    persist.rcs.supported=1 \
+    persist.dbg.ims_volte_enable=1

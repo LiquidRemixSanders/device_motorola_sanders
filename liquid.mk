@@ -39,7 +39,7 @@ PRODUCT_BUILD_PROP_OVERRIDES +=
 TARGET_DEVICE=liquid_sander PRODUCT_NAME="Moto G5s Plus"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DEVICE_MAINTAINERS="Syed Sajid (syedsajid)" \
+    DEVICE_MAINTAINER="Syed Sajid (syedsajid)" \
     PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPS28.65-36 9fea release-keys"
 
 # for specific
