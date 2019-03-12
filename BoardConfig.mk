@@ -62,6 +62,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 #BUILD_DEVICE_LIBHIDL := false
 
 # Kernel
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
@@ -76,8 +77,10 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := sanders_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8953
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_PATH := $(ANDROID_BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/clang-4691093/bin
-TARGET_KERNEL_CLANG_VERSION := 7.0.2
+TADGET_KERNEL_CLANG_VERSION := 8.0.8
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+#TARGET_KERNEL_CLANG_PATH := $(ANDROID_BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/clang-4691093/bin
+TARGET_KERNEL_CLANG_VERSION := 9.0.1
 TARGET_USE_SDCLANG := true
 
 # Audio
@@ -139,6 +142,8 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # Camera
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /system/vendor/bin/mm-qcamera-daemon=26
 USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 
@@ -157,10 +162,10 @@ TARGET_HW_DISK_ENCRYPTION := true
 # Enable dexpreopt to speed boot time
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
 # Display
 BOARD_USES_ADRENO := true
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_GRALLOC1 := true
@@ -175,6 +180,11 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 # FM
 BOARD_HAVE_QCOM_FM := true
+BOARD_HAVE_FM_RADIO := true
+TARGET_QCOM_NO_FM_FIRMWARE := true
+
+#CAF HAls
+TARGET_QCOM_WLAN_VARIANT := wlan-caf
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
@@ -220,8 +230,8 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # SELinux
-#include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true

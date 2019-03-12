@@ -1,0 +1,13 @@
+[
+  {
+    "repository":  "LLuviaDevices/vendor_motorola_sanders",
+    "target_path": "vendor/motorola/sanders",
+    "branch": "3.0"
+  },
+
+  {
+    "repository": "LLuviaDevices/kernel_motorola_msm8953",
+    "target_path": "kernel/motorola/msm8953",
+    "branch": "3.0"
+  }
+]
