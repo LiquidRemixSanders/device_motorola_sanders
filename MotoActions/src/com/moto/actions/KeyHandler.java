@@ -91,6 +91,8 @@ public class KeyHandler implements DeviceKeyHandler {
     private String mRearCameraId;
     private boolean mTorchEnabled;
     private Vibrator mVibrator;
+    private int mProximityTimeOut;
+    private boolean mProximityWakeSupported;
     private ISearchManager mSearchManagerService;
     private Handler mHandler;
     private int fpTapCounts = 0;
@@ -394,6 +396,14 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private boolean isHapticFeedbackEnabledOnFP() {
         return !FileUtils.readOneLine(getFPNodeBasedOnScreenState(FP_HAPTIC_NODE)).equals("0");
+    }
+
+    private boolean isProximityEnabledOnScreenOffGesturesFP() {
+        return !FileUtils.readOneLine(getFPNodeBasedOnScreenState(FP_PROXIMITY_CHECK_SCREENOFF_NODE)).equals("0");
+    }
+
+    private boolean isProximityEnabledOnScreenOffGestures() {
+        return Settings.System.getInt(mContext.getContentResolver(), KEY_GESTURE_ENABLE_PROXIMITY_SENSOR, 1) != 0;
     }
 
     private String getFPNodeBasedOnScreenState(String node) {
