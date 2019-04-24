@@ -22,7 +22,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Inherit from potter device
 $(call inherit-product, device/motorola/sanders/device.mk)
 
-# Inherit some common CM stuff.
+# Inherit some common BLISS stuff.
 $(call inherit-product, vendor/bliss/config/common.mk)
 
 # Boot animation
@@ -40,7 +40,12 @@ PRODUCT_BUILD_PROP_OVERRIDES +=
 TARGET_DEVICE=bliss_sander PRODUCT_NAME="Moto G5s Plus"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DEVICE_MAINTAINERS="Syed Sajid (syedsajid)"
+    DEVICE_MAINTAINER="Syed Sajid (syedsajid)" \
+    PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPS28.65-36 9fea release-keys"
 
 # for specific
 $(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
+
+# FINGERPRINT
+BUILD_FINGERPRINT := google/walleye/walleye:9/PPP3.180510.008/4811556:user/release-keys 
+VENDOR_BUILD_FINGERPRINT := google/walleye/walleye:9/PPP3.180510.008/4811556:user/release-keys
