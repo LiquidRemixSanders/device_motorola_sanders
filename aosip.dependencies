@@ -1,15 +1,14 @@
 [
   {
-    "repository": "LiquidRemixSanders/gzosp_vendor_motorola_sanders",
-    "traget_path": "vendor/motorola/sanders",    
-    "branch":  "pie"
-   }
-]
+    "repository":  "LiquidRemixSanders/vendor_motorola_sanders",
+    "target_path": "vendor/motorola/sanders",
+    "branch": "9.0"
+  },
 
-[
-   {
-    "repository": "LiquidRemixSanders/android_kernel_motorola_msm8953",
-    "target_path": "kernel/motorola/msm8953",
-    "branch": "9.0-eas-caf"
-   }
+  {
+    "repository":  "AOSiP/platform_prebuilts_clang_host_linux-x86",
+    "target_path": "prebuilts/clang/host/linux-x86",
+    "branch": "pie",
+    "remote": "gituhb"
+  }
 ]

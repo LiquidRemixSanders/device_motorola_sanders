@@ -67,6 +67,7 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
+    libaacwrapper \
     libaudio-resampler \
     libtinycompress
 
@@ -309,7 +310,8 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service
+    android.hardware.power@1.0-service \
+    power.qcom
 
 # Powerhint configuration file
 PRODUCT_COPY_FILES += \
@@ -369,6 +371,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/seccomp_policy/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+
+# IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -445,7 +451,12 @@ PRODUCT_COPY_FILES += \
 # TEMP FIX
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.manager@1.0
+    android.hidl.manager@1.0 \
+    android.hidl.manager-V1.0-java
+
+# Wi-Fi Display
+PRODUCT_BOOT_JARS += \
+    WfdCommon
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
