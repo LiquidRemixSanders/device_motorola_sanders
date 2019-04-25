@@ -32,6 +32,9 @@ TARGET_SCREEN_HEIGHT := 1920
 # GApps
 $(call inherit-product-if-exists, vendor/gapps/config.mk)
 
+# PixelStyle
+$(call inherit-product-if-exists, vendor/pixelstyle/config.mk)
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sanders
 PRODUCT_NAME := aosip_sanders

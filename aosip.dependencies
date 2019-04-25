@@ -6,9 +6,9 @@
   },
 
   {
-    "repository":  "AOSiP/platform_prebuilts_clang_host_linux-x86",
-    "target_path": "prebuilts/clang/host/linux-x86",
-    "branch": "pie",
+    "repository":  "LiquidRemixSanders/kernel/motorola/msm8953",
+    "target_path": "kernel/motorola/msm8953",
+    "branch": "9.0-eas-caf",
     "remote": "gituhb"
   }
 ]
