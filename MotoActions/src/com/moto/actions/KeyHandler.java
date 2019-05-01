@@ -664,6 +664,8 @@ public class KeyHandler implements DeviceKeyHandler {
             }
         }
 
+    }
+
     private void resetFPGestureDelay() {
         fpGesturePending = false;
         mHandler.removeCallbacks(fpGestureRunnable);
