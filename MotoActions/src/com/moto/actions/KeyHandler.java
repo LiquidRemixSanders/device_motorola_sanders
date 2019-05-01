@@ -646,7 +646,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private void registerFPScreenOffListener(final int scanCode) {
         mProximityWakeLock.acquire();
-        mSensorManager.registerListener(new SensorEventListener() {
+        mSensorManager.registerListener(new SensorEventListener()) {
             @Override
             public void onSensorChanged(SensorEvent event) {
                 mProximityWakeLock.release();
