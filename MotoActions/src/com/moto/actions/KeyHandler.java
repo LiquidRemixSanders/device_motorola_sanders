@@ -660,7 +660,6 @@ public class KeyHandler implements DeviceKeyHandler {
                     mFPScreenOffGesturesHandler.sendMessage(msg);
                 }
             }
-        }
 
     private void resetFPGestureDelay() {
         fpGesturePending = false;
