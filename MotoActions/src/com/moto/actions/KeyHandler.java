@@ -470,8 +470,6 @@ public class KeyHandler implements DeviceKeyHandler {
             } else {
                 processFPScancode(scanCode);
             }
-        } else if (isScreenOffGesturesScanCode) {
-            processScreenOffScancode(scanCode);
         }
         return null;
     }
@@ -639,28 +637,7 @@ public class KeyHandler implements DeviceKeyHandler {
         if (!mFPScreenOffGesturesHandler.hasMessages(FP_ACTION_REQUEST)) {
             Message msg = mFPScreenOffGesturesHandler.obtainMessage(FP_ACTION_REQUEST);
             msg.arg1 = scanCode;
-            mFPScreenOffGesturesHandler.sendMessageDelayed(msg, mProximityTimeOut);
-            registerFPScreenOffListener(scanCode);
-        }
-    }
-
-    private void registerFPScreenOffListener(final int scanCode) {
-        mProximityWakeLock.acquire();
-        mSensorManager.registerListener(new SensorEventListener() {
-            @Override
-            public void onSensorChanged(SensorEvent event) {
-                mProximityWakeLock.release();
-                mSensorManager.unregisterListener(this);
-                if (!mFPScreenOffGesturesHandler.hasMessages(FP_ACTION_REQUEST)) {
-                    // The sensor took to long, ignoring.
-                    return;
-                }
-                mFPScreenOffGesturesHandler.removeMessages(FP_ACTION_REQUEST);
-                if (event.values[0] == mProximitySensor.getMaximumRange()) {
-                    Message msg = mFPScreenOffGesturesHandler.obtainMessage(FP_ACTION_REQUEST);
-                    msg.arg1 = scanCode;
-                    mFPScreenOffGesturesHandler.sendMessage(msg);
-                }
+                mFPScreenOffGesturesHandler.sendMessage(msg);
             }
 
     }
@@ -668,48 +645,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private void resetFPGestureDelay() {
         fpGesturePending = false;
         mHandler.removeCallbacks(fpGestureRunnable);
-    }
-
-    private void processScreenOffScancode(int scanCode) {
-        if (screenOffGesturePending) {
-            return;
-        } else {
-            resetScreenOffGestureDelay();
-            screenOffGesturePending = true;
-            mHandler.postDelayed(screenOffGestureRunnable, 500);
-        }
-        if (!mScreenOffGesturesHandler.hasMessages(GESTURE_REQUEST)) {
-            Message msg = mScreenOffGesturesHandler.obtainMessage(GESTURE_REQUEST);
-            msg.arg1 = scanCode;
-            mScreenOffGesturesHandler.sendMessageDelayed(msg, mProximityTimeOut);
-            registerScreenOffGesturesListener(scanCode);
-        }
-    }
-
-    private void registerScreenOffGesturesListener(final int scanCode) {
-        mProximityWakeLock.acquire();
-        mSensorManager.registerListener(new SensorEventListener() {
-            @Override
-            public void onSensorChanged(SensorEvent event) {
-                mProximityWakeLock.release();
-                mSensorManager.unregisterListener(this);
-                if (!mScreenOffGesturesHandler.hasMessages(GESTURE_REQUEST)) {
-                    // The sensor took to long, ignoring.
-                    return;
-                }
-                mScreenOffGesturesHandler.removeMessages(GESTURE_REQUEST);
-                if (event.values[0] == mProximitySensor.getMaximumRange()) {
-                    Message msg = mScreenOffGesturesHandler.obtainMessage(GESTURE_REQUEST);
-                    msg.arg1 = scanCode;
-                    mScreenOffGesturesHandler.sendMessage(msg);
-                }
-            }
-
-            @Override
-            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-            }
-
-        }, mProximitySensor, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
     private void fireScreenOffAction(int action) {
@@ -796,38 +731,6 @@ public class KeyHandler implements DeviceKeyHandler {
                     mVibrator.vibrate(owningUid, owningPackage, effect, VIBRATION_ATTRIBUTES);
                 }
             });
-        }
-    }
-
-    private class ScreenOffGesturesHandler extends Handler {
-        @Override
-        public void handleMessage(Message msg) {
-            int scanCode = msg.arg1;
-            int action = 0;
-            switch (scanCode) {
-                case GESTURE_SWIPE_RIGHT_SCANCODE:
-                    action = str2int(FileUtils.readOneLine(GESTURE_SWIPE_RIGHT_NODE));
-                    break;
-                case GESTURE_SWIPE_LEFT_SCANCODE:
-                    action = str2int(FileUtils.readOneLine(GESTURE_SWIPE_LEFT_NODE));
-                    break;
-                case GESTURE_SWIPE_DOWN_SCANCODE:
-                    action = str2int(FileUtils.readOneLine(GESTURE_SWIPE_DOWN_NODE));
-                    break;
-                case GESTURE_SWIPE_UP_SCANCODE:
-                    action = str2int(FileUtils.readOneLine(GESTURE_SWIPE_UP_NODE));
-                    break;
-                case GESTURE_DOUBLE_TAP_SCANCODE:
-                    action = str2int(FileUtils.readOneLine(GESTURE_DOUBLE_TAP_NODE));
-                    if (action != 0) {
-                        action = ACTION_POWER;
-                    }
-                    break;
-            }
-            boolean isActionSupported = ArrayUtils.contains(sScreenOffSupportedActions, action);
-            if (isActionSupported) {
-                fireScreenOffAction(action);
-            }
         }
     }
 
