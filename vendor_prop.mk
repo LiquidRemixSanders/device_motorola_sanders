@@ -84,7 +84,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.eis.enable=1 \
     vidc.dec.disable.split.cpu=1 \
     video.disable.ubwc=1 \
-    vendor.camera.aux.packagelist=com.motorola.camera2,com.google.android.Pixel2Mod
+    vendor.camera.aux.packagelist=com.motorola.camera2,com.google.android.Pixel2Mod \
+    camera.hal1.packagelist=com.instagram.android,com.whatsapp
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -134,12 +135,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_default_color_mode=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
     vendor.display.disable_skip_validate=1
-
-# Wifi-Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0 \
-    vendor.video.disable.ubwc=1
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -360,3 +355,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.always_send_plmn=true \
     persist.rcs.supported=1 \
     persist.dbg.ims_volte_enable=1
+
+#WFD
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.wfd.enable=1 \
+    vendor.video.disable.ubwc=1

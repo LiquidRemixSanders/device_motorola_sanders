@@ -545,8 +545,8 @@ service vendor.esepmdaemon /vendor/bin/esepmdaemon
     user system
     group nfc
 
-service vendor.wcnss-service /vendor/bin/wcnss_service
-    class main
+service wcnss-service /vendor/bin/wcnss_service
+    class late_start
     user system
     group system wifi radio
     oneshot
@@ -556,11 +556,11 @@ service vendor.adsprpcd /vendor/bin/adsprpcd
     user media
     group media
 
-#service energy-awareness /vendor/bin/energy-awareness
-#    class main
-#    user root
-#    group system
-#    oneshot
+service vendor.energy-awareness /vendor/bin/energy-awareness
+    class main
+    user root
+    group system
+    oneshot
 
 service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
@@ -761,14 +761,14 @@ service wlan_logging /system/bin/cnss_diag -q -f
     disabled
     oneshot
 
-#service cnss-daemon /vendor/bin/cnss-daemon -n -l
-#    class late_start
-#    user system
-#    group system inet net_admin wifi
-#    capabilities NET_ADMIN
-#
-#on property:sys.shutdown.requested=*
-#    stop cnss-daemon
+service cnss-daemon /vendor/bin/cnss-daemon -n -l
+    class late_start
+    user system
+    group system inet net_admin wifi
+    capabilities NET_ADMIN
+
+on property:sys.shutdown.requested=*
+    stop cnss-daemon
 
 service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
     class late_start

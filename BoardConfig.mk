@@ -157,6 +157,7 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_USES_METADATA_AS_FDE_KEY := true
 
 # Enable dexpreopt to speed boot time
 WITH_DEXPREOPT := true
@@ -209,7 +210,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 25614597120 # 25014255 * 1024 mmcblk0p54
 TARGET_PER_MGR_ENABLED := true
 
 # Power
-TARGET_HAS_NO_WIFI_STATS := true
+TARGET_HAS_NO_WLAN_STATS := true
 
 # QC flags
 BOARD_USES_QCOM_HARDWARE := true
@@ -247,6 +248,7 @@ TARGET_USES_MKE2FS := true
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_HAS_QCOM_WLAN_SDK          := true
+PRODUCT_VENDOR_MOVE_ENABLED      := true
 BOARD_WLAN_DEVICE                := qcwcn
 BOARD_HOSTAPD_DRIVER             := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_qcwcn
