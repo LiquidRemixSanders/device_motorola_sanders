@@ -40,6 +40,7 @@ TARGET_DEVICE=liquid_sander PRODUCT_NAME="Moto G5s Plus"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DEVICE_MAINTAINERS="Syed Sajid (syedsajid)" \
+    LIQUID_BUILDTYPE := RELEASE \
     PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPS28.65-36 9fea release-keys"
 
 # for specific
@@ -48,3 +49,4 @@ $(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
 # FINGERPRINT
 BUILD_FINGERPRINT := google/walleye/walleye:9/PPP3.180510.008/4811556:user/release-keys 
 VENDOR_BUILD_FINGERPRINT := google/walleye/walleye:9/PPP3.180510.008/4811556:user/release-keys
+
